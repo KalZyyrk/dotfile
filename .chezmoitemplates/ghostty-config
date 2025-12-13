@@ -1,0 +1,16 @@
+# This is the configuration file for Ghostty.
+
+background-opacity = 0.85
+background-blur=true
+
+unfocused-split-opacity=0.60
+split-divider-color=#7a8a00
+
+theme=Desert
+
+cursor-style=block
+
+shell-integration=none
+
+auto-update=check
+auto-update-channel=stable

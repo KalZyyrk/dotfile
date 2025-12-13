@@ -13,3 +13,5 @@ alias gcl="golangci-lint"
 alias ws="windsurf"
 alias chm="chezmoi"
 
+# Alias pour éditer la config ghostty
+alias ghostty-conf='$EDITOR $(chezmoi source-path)/.chezmoitemplates/ghostty-config'

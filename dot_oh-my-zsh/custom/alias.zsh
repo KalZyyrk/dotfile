@@ -10,4 +10,6 @@ alias bat=batcat
 alias cl=clear
 alias mk="minikube"
 alias gcl="golangci-lint"
+alias ws="windsurf"
+alias chm="chezmoi"
 

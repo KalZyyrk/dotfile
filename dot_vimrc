@@ -1,0 +1,130 @@
+set fileformat=unix
+set encoding=UTF-8
+
+" Indent Config {{{ 
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
+set smartindent
+set smarttab
+set expandtab
+" }}}
+
+set showcmd
+set noshowmode
+set noerrorbells visualbell t_vb=
+
+" Search Config {{{
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+nnoremap <CR> :noh<CR><CR>:<backspace>
+" }}}
+
+" Cursor Config {{{
+set cursorline
+hi CursorLine cterm=NONE ctermbg=240
+set signcolumn=number
+"}}}
+
+" Disable compatibility with vi which can cause unexpected issues.
+set nocompatible
+
+" Enable type file detection.
+filetype on
+
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+" Load an indent file for the detected file type.
+filetype indent on
+
+" Turn syntax highlighting on.
+syntax on
+
+" Add numbers to each line on the left-hand side.
+set number
+
+" Backup Config {{{
+  set noswapfile
+  set nobackup
+  set undodir=~/.vim/undodir
+  set undofile
+" }}}
+
+" Wildmenu Config {{{
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+" }}}
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" This will enable code folding.
+" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" More Vimscripts code goes here.
+
+" }}}
+
+" PLUGINS ---------------------------------------------------------------- {{{
+"
+
+call plug#begin('~/.vim/plugged')
+
+  Plug 'morhetz/gruvbox'
+
+  Plug 'tpope/vim-commentary'
+
+  Plug 'tpope/vim-surround'
+
+  Plug 'dense-analysis/ale'
+
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
+  Plug 'preservim/nerdtree'
+
+  Plug 'vim-airline/vim-airline'
+
+call plug#end()
+
+" }}}
+
+" STATUS LINE ------------------------------------------------------------ {{{
+
+" Clear status line when vimrc is reloaded.
+set statusline=
+
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
+
+" }}}
+
+" Plugins Configuration 
+so ~/.vim/plugins-config.vim
+
+" Colors & Themes
+so ~/.vim/colors.vim
+

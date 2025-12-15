@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.os "darwin" }}
+.oh-my-zsh/custom/macOs.zsh.darwin
+{{- end }}
+
+# homeKube.zsh - only apply manually
+.oh-my-zsh/custom/homeKube.zsh
+
